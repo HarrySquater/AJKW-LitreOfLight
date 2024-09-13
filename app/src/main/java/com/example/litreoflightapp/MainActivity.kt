@@ -16,9 +16,11 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
+var duration = 0
+
 class MainActivity : AppCompatActivity() {
+
     private val ESP8266_IP = "http://192.168.4.1"
-//    private lateinit var binding:ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,17 +41,6 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-//    binding.bottomNavigationView.setOnItemSelectedListener { item ->
-//        when (item.itemId) {
-//            R.id.home -> replace(lightcontrol())
-//            R.id.settings -> replace(settingsFrag())
-//            else -> {
-//
-//            }
-//        }
-//        true
-//    }
-
 
     private fun replace(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
@@ -62,30 +53,4 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit() //Commit the transaction(see Bottom Navigation Bar - Android Studio, 2022)
     }
 }
-
-    //    private fun sendHttpRequest(command: String) {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            try {
-//                val url = URL("$ESP8266_IP$command")
-//                val urlConnection = url.openConnection() as HttpURLConnection
-//                urlConnection.requestMethod = "GET"
-//                val responseCode = urlConnection.responseCode
-//                if (responseCode == 200) {
-//                    showToast("Success: $command")
-//                } else {
-//                    showToast("Failed: $command")
-//                }
-//                urlConnection.disconnect()
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//                showToast("Error: ${e.message}")
-//            }
-//        }
-//    }
-//    private fun showToast(message: String) {
-//        runOnUiThread {
-//            Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
-//        }
-//    }
-
 
